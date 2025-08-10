@@ -1,24 +1,14 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>ตั้งค่าปลายทาง QR</title>
+    <title>Redirect...</title>
 </head>
 <body>
-    <h2>ตั้งค่าลิงก์ปลายทาง</h2>
-    <input type="text" id="newUrl" placeholder="https://gifpiya.github.io/Thongpalm-/">
-    <button onclick="saveDestination()">บันทึก</button>
-
+    <p>กำลังเปลี่ยนเส้นทาง...</p>
     <script>
-        function saveDestination() {
-            const url = document.getElementById('newUrl').value;
-            if (!url) {
-                alert("กรุณากรอก URL");
-                return;
-            }
-            localStorage.setItem("qrDestination", url);
-            alert("บันทึกเรียบร้อย");
-        }
+        const destination = localStorage.getItem("qrDestination") || "https://google.com";
+        window.location.href = destination;
     </script>
 </body>
 </html>
